@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Home and Eco-Friendly Energy Solutions</title>
+<style>
+  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f9; color:#222; }
+  header { background:#4CAF50; color:white; padding:30px 0; text-align:center; }
+  h1 { margin:0; font-size:3em; }
+  h2 { font-size:2em; margin-top:0; }
+  nav { background:#333; display:flex; justify-content:center; flex-wrap:wrap; }
+  nav button { background:#4CAF50; color:white; border:none; padding:15px 25px; margin:5px; cursor:pointer; border-radius:5px; font-size:1.2em; }
+  nav button:hover { background:#45a049; }
+  .container { width:90%; max-width:1100px; margin:20px auto; padding:30px; background:white; box-shadow:0 0 20px rgba(0,0,0,0.1); border-radius:15px; font-size:1.2em; line-height:1.6em; }
+  .module { display:none; }
+  .module.active { display:block; }
+  img { max-width:100%; border-radius:10px; margin-bottom:20px; }
+  table { width:100%; border-collapse:collapse; margin:15px 0; font-size:1.1em; }
+  th, td { border:1px solid #ccc; padding:10px; text-align:left; }
+  th { background:#4CAF50; color:white; }
+  pre { background:#eee; padding:15px; overflow-x:auto; border-radius:5px; font-size:1em; }
+  footer { text-align:center; padding:25px 0; background:#333; color:white; font-size:1.3em; margin-top:20px; }
+  .component-img { max-width:180px; margin:10px; border:1px solid #ccc; border-radius:5px; }
+  .component-section { display:flex; flex-wrap:wrap; }
+  p { font-size:1.2em; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Smart Home and Eco-Friendly Energy Solutions</h1>
+</header>
+
+<nav>
+  <button onclick="showModule('home')">Home</button>
+  <button onclick="showModule('team')">Team Members</button>
+  <button onclick="showModule('laser')">Laser Security</button>
+  <button onclick="showModule('irrigation')">Smart Irrigation</button>
+  <button onclick="showModule('flame')">Flame, Gas, Smoke</button>
+  <button onclick="showModule('temperature')">Temp & Humidity</button>
+  <button onclick="showModule('renewable')">Renewable Energy</button>
+</nav>
+
+<div class="container">
+
+  <!-- Home / Introduction -->
+  <div id="home" class="module">
+    <h2>Welcome to Smart Home and Eco-Friendly Energy Solutions</h2>
+    <img src="project_image.jpg" alt="Smart Home Project Image">
+    <p>This project demonstrates a complete smart home system integrating safety, automation, and renewable energy solutions. The smart home includes laser security, automatic irrigation, environmental monitoring, flame/gas/smoke detection, and renewable energy generation. It uses sensors, OLED displays, and renewable energy sources to create an efficient, safe, and eco-friendly home environment. Explore each module by clicking the buttons above to see aims, components, working, and advantages.</p>
+    <p style="font-weight:bold; font-size:1.2em;">Discover, learn, and be inspired!</p>
+  </div>
+
+  <!-- Team Members -->
+  <div id="team" class="module">
+    <h2>Team Members (Grade 7 A)</h2>
+    <ul>
+      <li><strong>Gowtham K</strong> - Project Lead & Chief Developer</li>
+      <li><strong>Kavin M.R</strong> - Senior Systems Developer</li>
+      <li><strong>Anir Vinay G.K</strong> - Support Engineer</li>
+      <li><strong>Sree Hari M</strong> - Assistant Support Engineer</li>
+    </ul>
+    <p style="margin-top:15px;">Together we innovate, design, and create smarter homes for the future.</p>
+  </div>
+
+  <!-- Laser Security -->
+  <div id="laser" class="module">
+    <h2>Laser Security System</h2>
+    <img src="project_image.jpg" alt="Laser Security">
+    <p><strong>Aim:</strong> Protect the house using laser security. Laser interruption triggers alarm and LED.</p>
+    <p><strong>Working:</strong> Laser reflects through 3 mirrors to LDR sensor. Beam interruption triggers buzzer, LED, and OLED alert.</p>
+    <p><strong>Components:</strong></p>
+    <div class="component-section">
+      <img src="laser.jpg" alt="Laser" class="component-img">
+      <img src="ldr.jpg" alt="LDR Sensor" class="component-img">
+      <img src="transistor.jpg" alt="BC547 Transistor" class="component-img">
+      <img src="led.jpg" alt="LED" class="component-img">
+      <img src="buzzer.jpg" alt="Buzzer" class="component-img">
+      <img src="mirror.jpg" alt="Mirrors" class="component-img">
+    </div>
+    <p><strong>Advantages:</strong> Low cost, high security, continuous monitoring.</p>
+    <p><strong>Future Scope:</strong> IoT alerts, mobile notifications.</p>
+    <p style="font-style:italic;">Securing homes, securing futures.</p>
+  </div>
+
+  <!-- Smart Irrigation -->
+  <div id="irrigation" class="module">
+    <h2>Smart Irrigation System</h2>
+    <img src="irrigation.jpg" alt="Smart Irrigation">
+    <p><strong>Aim:</strong> Automatic watering based on soil moisture.</p>
+    <p><strong>Working:</strong> Soil Moisture Sensor detects dry/wet soil. Pump and LED activate accordingly. OLED displays real-time soil status.</p>
+    <p><strong>Components:</strong></p>
+    <div class="component-section">
+      <img src="soil_sensor.jpg" alt="Soil Moisture Sensor" class="component-img">
+      <img src="pump.jpg" alt="Water Pump" class="component-img">
+      <img src="relay.jpg" alt="Relay" class="component-img">
+      <img src="led.jpg" alt="LED" class="component-img">
+    </div>
+    <p><strong>Advantages:</strong> Water saving, efficient, reduces human effort.</p>
+    <p><strong>Future Scope:</strong> HVAC or IoT environmental automation.</p>
+    <p style="font-style:italic;">Every drop counts towards a greener planet.</p>
+  </div>
+
+  <!-- Flame, Gas, Smoke -->
+  <div id="flame" class="module">
+    <h2>Flame, Gas, and Smoke Detection</h2>
+    <img src="flame_gas.jpg" alt="Flame, Gas, Smoke">
+    <p><strong>Aim:</strong> Detect fire, smoke, or gas leakage.</p>
+    <p><strong>Working:</strong> MQ-2 detects gas/smoke, LDR detects flame. Buzzer, LED, and OLED alert trigger on detection.</p>
+    <p><strong>Components:</strong></p>
+    <div class="component-section">
+      <img src="mq2.jpg" alt="MQ-2 Sensor" class="component-img">
+      <img src="ldr.jpg" alt="LDR Sensor" class="component-img">
+      <img src="buzzer.jpg" alt="Buzzer" class="component-img">
+      <img src="led.jpg" alt="LED" class="component-img">
+    </div>
+    <p><strong>Advantages:</strong> Early warning, automatic alerts.</p>
+    <p><strong>Future Scope:</strong> Ventilation/fire suppression, mobile alerts.</p>
+    <p style="font-style:italic;">Safety first, always alert.</p>
+  </div>
+
+  <!-- Temperature & Humidity -->
+  <div id="temperature" class="module">
+    <h2>Temperature & Humidity Monitoring</h2>
+    <img src="temp_humidity.jpg" alt="Temperature & Humidity">
+    <p><strong>Aim:</strong> Real-time monitoring of environmental conditions.</p>
+    <p><strong>Working:</strong> DHT11 sensor measures temperature and humidity. OLED displays readings.</p>
+    <p><strong>Components:</strong></p>
+    <div class="component-section">
+      <img src="dht11.jpg" alt="DHT11 Sensor" class="component-img">
+      <img src="oled.jpg" alt="OLED Display" class="component-img">
+    </div>
+    <p><strong>Advantages:</strong> Useful for greenhouses, homes, labs.</p>
+    <p><strong>Future Scope:</strong> IoT integration, mobile notifications, weather prediction.</p>
+    <p style="font-style:italic;">Know your environment, control your comfort.</p>
+  </div>
+
+  <!-- Renewable Energy -->
+  <div id="renewable" class="module">
+    <h2>Renewable Energy Solutions</h2>
+    <img src="renewable.jpg" alt="Renewable Energy">
+    <p><strong>Aim:</strong> Generate energy using wind, solar, and mechanical sources.</p>
+    <p><strong>Working:</strong> Windmill powers LED, seesaw dynamo triggers buzzer, solar panel powers LED. Demonstrates renewable energy practically.</p>
+    <p><strong>Components:</strong></p>
+    <div class="component-section">
+      <img src="windmill.jpg" alt="Windmill" class="component-img">
+      <img src="dynamo.jpg" alt="Dynamo Motor" class="component-img">
+      <img src="solar.jpg" alt="Solar Panel" class="component-img">
+      <img src="led.jpg" alt="LED" class="component-img">
+      <img src="buzzer.jpg" alt="Buzzer" class="component-img">
+    </div>
+    <p><strong>Advantages:</strong> Educational, environmentally friendly.</p>
+    <p><strong>Future Scope:</strong> Power small appliances, energy storage integration.</p>
+    <p style="font-style:italic;">Powering smarter, greener futures.</p>
+  </div>
+
+</div>
+
+<footer>
+<span style="font-style:italic;">Building smarter and greener homes for the future!</span>
+</footer>
+
+<script>
+function showModule(moduleId) {
+  var modules = document.querySelectorAll('.module');
+  modules.forEach(m => m.classList.remove('active'));
+  document.getElementById(moduleId).classList.add('active');
+}
+// Show Home page by default
+showModule('home');
+</script>
+
+</body>
+</html>
