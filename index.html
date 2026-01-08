@@ -9,21 +9,19 @@
   header { background:#4CAF50; color:white; padding:30px 0; text-align:center; }
   h1 { margin:0; font-size:3em; }
   h2 { font-size:2em; margin-top:0; }
-  nav { background:#333; display:flex; justify-content:center; flex-wrap:wrap; }
+  nav { background:#333; display:flex; justify-content:center; flex-wrap:wrap; position:sticky; top:0; z-index:100; }
   nav button { background:#4CAF50; color:white; border:none; padding:15px 25px; margin:5px; cursor:pointer; border-radius:5px; font-size:1.2em; }
   nav button:hover { background:#45a049; }
   .container { width:90%; max-width:1100px; margin:20px auto; padding:30px; background:white; box-shadow:0 0 20px rgba(0,0,0,0.1); border-radius:15px; font-size:1.2em; line-height:1.6em; }
   .module { display:none; }
   .module.active { display:block; }
-  img { max-width:100%; border-radius:10px; margin-bottom:20px; }
   table { width:100%; border-collapse:collapse; margin:15px 0; font-size:1.1em; }
   th, td { border:1px solid #ccc; padding:10px; text-align:left; }
   th { background:#4CAF50; color:white; }
-  pre { background:#eee; padding:15px; overflow-x:auto; border-radius:5px; font-size:1em; }
+  pre { background:#eee; padding:15px; overflow-x:auto; border-radius:5px; font-size:1em; white-space: pre-wrap; }
   footer { text-align:center; padding:25px 0; background:#333; color:white; font-size:1.3em; margin-top:20px; }
-  .component-img { max-width:180px; margin:10px; border:1px solid #ccc; border-radius:5px; }
-  .component-section { display:flex; flex-wrap:wrap; }
   p { font-size:1.2em; }
+  button.copyBtn { padding:10px 20px; margin-bottom:10px; background:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer; font-size:1em; }
 </style>
 </head>
 <body>
@@ -40,17 +38,34 @@
   <button onclick="showModule('flame')">Flame, Gas, Smoke</button>
   <button onclick="showModule('temperature')">Temp & Humidity</button>
   <button onclick="showModule('renewable')">Renewable Energy</button>
+  <button onclick="showModule('arduino')">Arduino Code</button>
 </nav>
 
 <div class="container">
 
   <!-- Home / Introduction -->
-  <div id="home" class="module">
-    <h2>Welcome to Smart Home and Eco-Friendly Energy Solutions</h2>
-    <img src="project_image.jpg" alt="Smart Home Project Image">
-    <p>This project demonstrates a complete smart home system integrating safety, automation, and renewable energy solutions. The smart home includes laser security, automatic irrigation, environmental monitoring, flame/gas/smoke detection, and renewable energy generation. It uses sensors, OLED displays, and renewable energy sources to create an efficient, safe, and eco-friendly home environment. Explore each module by clicking the buttons above to see aims, components, working, and advantages.</p>
-    <p style="font-weight:bold; font-size:1.2em;">Discover, learn, and be inspired!</p>
-  </div>
+<div id="home" class="module" style="text-align:center;">
+  <h2>Vidya Niketan School CBSE, Coimbatore</h2>
+  <h2>Welcome to Smart Home and Eco-Friendly Energy Solutions</h2>
+
+  <p>
+    This project demonstrates a complete smart home system integrating safety,
+    automation, and eco-friendly solutions. The system includes laser security,
+    smart irrigation, environmental monitoring, and flame, gas, and smoke detection
+    to create a safer and smarter home.
+  </p>
+
+  <p style="font-weight:bold; font-size:1.2em;">
+    Discover, learn, and be inspired!
+  </p>
+
+  <!-- Date at bottom -->
+  <p style="margin-top:40px; font-style:italic; font-size:1.1em;">
+    Date: 09 January 2026
+  </p>
+</div>
+
+
 
   <!-- Team Members -->
   <div id="team" class="module">
@@ -59,7 +74,6 @@
       <li><strong>Gowtham K</strong> - Project Lead & Chief Developer</li>
       <li><strong>Kavin M.R</strong> - Senior Systems Developer</li>
       <li><strong>Anir Vinay G.K</strong> - Support Engineer</li>
-      <li><strong>Sree Hari M</strong> - Assistant Support Engineer</li>
     </ul>
     <p style="margin-top:15px;">Together we innovate, design, and create smarter homes for the future.</p>
   </div>
@@ -67,18 +81,9 @@
   <!-- Laser Security -->
   <div id="laser" class="module">
     <h2>Laser Security System</h2>
-    <img src="project_image.jpg" alt="Laser Security">
     <p><strong>Aim:</strong> Protect the house using laser security. Laser interruption triggers alarm and LED.</p>
     <p><strong>Working:</strong> Laser reflects through 3 mirrors to LDR sensor. Beam interruption triggers buzzer, LED, and OLED alert.</p>
-    <p><strong>Components:</strong></p>
-    <div class="component-section">
-      <img src="laser.jpg" alt="Laser" class="component-img">
-      <img src="ldr.jpg" alt="LDR Sensor" class="component-img">
-      <img src="transistor.jpg" alt="BC547 Transistor" class="component-img">
-      <img src="led.jpg" alt="LED" class="component-img">
-      <img src="buzzer.jpg" alt="Buzzer" class="component-img">
-      <img src="mirror.jpg" alt="Mirrors" class="component-img">
-    </div>
+    <p><strong>Components:</strong> Laser, LDR Sensor, BC547 Transistor, LED, Buzzer, Mirrors</p>
     <p><strong>Advantages:</strong> Low cost, high security, continuous monitoring.</p>
     <p><strong>Future Scope:</strong> IoT alerts, mobile notifications.</p>
     <p style="font-style:italic;">Securing homes, securing futures.</p>
@@ -87,16 +92,9 @@
   <!-- Smart Irrigation -->
   <div id="irrigation" class="module">
     <h2>Smart Irrigation System</h2>
-    <img src="irrigation.jpg" alt="Smart Irrigation">
     <p><strong>Aim:</strong> Automatic watering based on soil moisture.</p>
     <p><strong>Working:</strong> Soil Moisture Sensor detects dry/wet soil. Pump and LED activate accordingly. OLED displays real-time soil status.</p>
-    <p><strong>Components:</strong></p>
-    <div class="component-section">
-      <img src="soil_sensor.jpg" alt="Soil Moisture Sensor" class="component-img">
-      <img src="pump.jpg" alt="Water Pump" class="component-img">
-      <img src="relay.jpg" alt="Relay" class="component-img">
-      <img src="led.jpg" alt="LED" class="component-img">
-    </div>
+    <p><strong>Components:</strong> Soil Moisture Sensor, Water Pump, Relay, LED</p>
     <p><strong>Advantages:</strong> Water saving, efficient, reduces human effort.</p>
     <p><strong>Future Scope:</strong> HVAC or IoT environmental automation.</p>
     <p style="font-style:italic;">Every drop counts towards a greener planet.</p>
@@ -105,16 +103,9 @@
   <!-- Flame, Gas, Smoke -->
   <div id="flame" class="module">
     <h2>Flame, Gas, and Smoke Detection</h2>
-    <img src="flame_gas.jpg" alt="Flame, Gas, Smoke">
     <p><strong>Aim:</strong> Detect fire, smoke, or gas leakage.</p>
     <p><strong>Working:</strong> MQ-2 detects gas/smoke, LDR detects flame. Buzzer, LED, and OLED alert trigger on detection.</p>
-    <p><strong>Components:</strong></p>
-    <div class="component-section">
-      <img src="mq2.jpg" alt="MQ-2 Sensor" class="component-img">
-      <img src="ldr.jpg" alt="LDR Sensor" class="component-img">
-      <img src="buzzer.jpg" alt="Buzzer" class="component-img">
-      <img src="led.jpg" alt="LED" class="component-img">
-    </div>
+    <p><strong>Components:</strong> MQ-2 Sensor, LDR Sensor, Buzzer, LED</p>
     <p><strong>Advantages:</strong> Early warning, automatic alerts.</p>
     <p><strong>Future Scope:</strong> Ventilation/fire suppression, mobile alerts.</p>
     <p style="font-style:italic;">Safety first, always alert.</p>
@@ -123,14 +114,9 @@
   <!-- Temperature & Humidity -->
   <div id="temperature" class="module">
     <h2>Temperature & Humidity Monitoring</h2>
-    <img src="temp_humidity.jpg" alt="Temperature & Humidity">
     <p><strong>Aim:</strong> Real-time monitoring of environmental conditions.</p>
     <p><strong>Working:</strong> DHT11 sensor measures temperature and humidity. OLED displays readings.</p>
-    <p><strong>Components:</strong></p>
-    <div class="component-section">
-      <img src="dht11.jpg" alt="DHT11 Sensor" class="component-img">
-      <img src="oled.jpg" alt="OLED Display" class="component-img">
-    </div>
+    <p><strong>Components:</strong> DHT11 Sensor, OLED Display</p>
     <p><strong>Advantages:</strong> Useful for greenhouses, homes, labs.</p>
     <p><strong>Future Scope:</strong> IoT integration, mobile notifications, weather prediction.</p>
     <p style="font-style:italic;">Know your environment, control your comfort.</p>
@@ -139,20 +125,88 @@
   <!-- Renewable Energy -->
   <div id="renewable" class="module">
     <h2>Renewable Energy Solutions</h2>
-    <img src="renewable.jpg" alt="Renewable Energy">
-    <p><strong>Aim:</strong> Generate energy using wind, solar, and mechanical sources.</p>
-    <p><strong>Working:</strong> Windmill powers LED, seesaw dynamo triggers buzzer, solar panel powers LED. Demonstrates renewable energy practically.</p>
-    <p><strong>Components:</strong></p>
-    <div class="component-section">
-      <img src="windmill.jpg" alt="Windmill" class="component-img">
-      <img src="dynamo.jpg" alt="Dynamo Motor" class="component-img">
-      <img src="solar.jpg" alt="Solar Panel" class="component-img">
-      <img src="led.jpg" alt="LED" class="component-img">
-      <img src="buzzer.jpg" alt="Buzzer" class="component-img">
-    </div>
+    <p><strong>Aim:</strong> Generate energy using wind and mechanical sources.</p>
+    <p><strong>Working:</strong> Windmill powers LED, seesaw dynamo triggers buzzer. Demonstrates renewable energy practically.</p>
+    <p><strong>Components:</strong> Windmill, Dynamo Motor, LED, Buzzer</p>
     <p><strong>Advantages:</strong> Educational, environmentally friendly.</p>
     <p><strong>Future Scope:</strong> Power small appliances, energy storage integration.</p>
     <p style="font-style:italic;">Powering smarter, greener futures.</p>
+  </div>
+
+  <!-- Arduino Code -->
+  <div id="arduino" class="module">
+    <h2>Arduino Code</h2>
+    <p>Below is the code for Smart Home and Eco-Friendly Energy Solutions:</p>
+    <button class="copyBtn" onclick="copyCode()">Copy Code</button>
+    <pre id="arduinoCode">
+#include &lt;Adafruit_GFX.h&gt;
+#include &lt;Adafruit_SSD1306.h&gt;
+#include "DHT.h"
+
+// --- Your Arduino code goes here ---
+#define DHTPIN 2
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
+
+Adafruit_SSD1306 d(128, 64, &Wire);
+
+int soil = A0, sLED = 7, flame = 8, fLED = 13, smoke = 4, smLED = 3, buzz = 11;
+int s = A1, l = 6;      // rain pin + rain LED
+
+unsigned long t = 0;
+int SOIL_T = 500, RAIN_T = 650;
+
+int relayPump = 10;
+
+void alert(const char* l1, const char* l2 = "") {
+  d.clearDisplay();
+  d.setTextColor(1);
+  d.setTextSize(2);
+  d.setCursor(0, 14);
+  d.print(l1);
+  if (l2[0]) { d.setCursor(0, 36); d.print(l2); }
+  d.display();
+}
+
+void setup() {
+  pinMode(sLED, OUTPUT); pinMode(fLED, OUTPUT); pinMode(smLED, OUTPUT); pinMode(buzz, OUTPUT);
+  pinMode(flame, INPUT); pinMode(smoke, INPUT); pinMode(l, OUTPUT);
+  pinMode(relayPump, OUTPUT); digitalWrite(relayPump, LOW);
+  d.begin(SSD1306_SWITCHCAPVCC, 0x3C); d.clearDisplay(); d.display();
+  dht.begin();
+}
+
+void loop() {
+  int dry = analogRead(soil) > SOIL_T;
+  int f = !digitalRead(flame);
+  int sm = !digitalRead(smoke);
+  int r = analogRead(s) < RAIN_T;
+
+  digitalWrite(sLED, dry); digitalWrite(fLED, f); digitalWrite(smLED, sm); digitalWrite(l, r);
+
+  if (dry) digitalWrite(relayPump, LOW); else digitalWrite(relayPump, HIGH);
+
+  if (f || sm) { digitalWrite(buzz, HIGH); t = 0; }
+  else if (r) {
+    if (!t) t = millis();
+    if (millis() - t < 5000) digitalWrite(buzz, ((millis() - t) % 100) < 50);
+    else digitalWrite(buzz, LOW);
+  } else { digitalWrite(buzz, LOW); t = 0; }
+
+  if (f) { alert("   FLAME!"); return; }
+  if (sm) { alert("SMOKE /   GAS LEAK!"); return; }
+  if (r) { alert("RAIN! TAKE CLOTHES"); return; }
+
+  float temp = dht.readTemperature(); float hum = dht.readHumidity();
+
+  d.clearDisplay(); d.setTextColor(1); d.setTextSize(1);
+  d.setCursor(0, 0); d.print("Temp: "); d.print(temp); d.print(" C");
+  d.setCursor(0, 14); d.print("Hum: "); d.print(hum); d.print(" %");
+  d.setCursor(0, 28); d.print("Soil: "); d.print(dry ? "DRY" : "WET");
+  if (dry) { d.setCursor(0, 42); d.print("Water Needed"); }
+  d.display();
+}
+    </pre>
   </div>
 
 </div>
@@ -163,10 +217,19 @@
 
 <script>
 function showModule(moduleId) {
-  var modules = document.querySelectorAll('.module');
+  const modules = document.querySelectorAll('.module');
   modules.forEach(m => m.classList.remove('active'));
   document.getElementById(moduleId).classList.add('active');
 }
+
+// Copy Arduino code function
+function copyCode() {
+  const code = document.getElementById("arduinoCode").innerText;
+  navigator.clipboard.writeText(code).then(() => {
+    alert("Arduino code copied to clipboard!");
+  });
+}
+
 // Show Home page by default
 showModule('home');
 </script>
